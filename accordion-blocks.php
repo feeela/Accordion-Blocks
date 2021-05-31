@@ -114,7 +114,7 @@ class PB_Accordion_Blocks {
 	public function enqueue_frontend_assets() {
 		$load_scripts_globally = $this->should_load_scripts_globally();
 
-		if ($load_scripts_globally || has_block('pb/accordion-item', get_the_ID())) {
+		if ($load_scripts_globally && has_block('pb/accordion-item', get_the_ID())) {
 			$min = (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min';
 
 			wp_enqueue_script(
